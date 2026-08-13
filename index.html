@@ -3,124 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hash Linux Command Center</title>
+    <title>HASH_PROJECT // TUXER :: ROOT</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Share+Tech+Mono&display=swap');
 
-        :root {
-            --bg: #050505;
-            --glass: rgba(255, 255, 255, 0.05);
-            --accent: #00f2ff;
-            --text: #e0e0e0;
-        }
+        :root { --neon: #00ff41; --bg: #050505; }
 
         body {
-            font-family: 'Inter', sans-serif;
             background: var(--bg);
-            color: var(--text);
+            color: var(--neon);
+            font-family: 'Share Tech Mono', monospace;
             margin: 0;
             overflow-x: hidden;
+            text-transform: uppercase;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+        /* Glitch Background Effect */
+        .scanline {
+            position: fixed; width: 100%; height: 100%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.1) 50%, rgba(0,255,65,0.02) 50%);
+            background-size: 100% 4px; pointer-events: none; z-index: 10;
         }
 
-        .hero h1 { font-size: 4rem; margin: 0; color: var(--accent); text-shadow: 0 0 20px var(--accent); }
+        .header { padding: 50px; border-bottom: 2px solid var(--neon); text-align: center; }
+        .header h1 { font-family: 'Orbitron'; font-size: 3rem; letter-spacing: 5px; text-shadow: 0 0 15px var(--neon); }
 
-        /* Container */
-        .container { max-width: 1000px; margin: auto; padding: 40px; }
-
-        /* Modern Card */
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: 0.4s;
+        .grid-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; padding: 50px;
         }
 
-        .card:hover { transform: scale(1.02); border-color: var(--accent); }
+        .node {
+            border: 1px solid var(--neon);
+            padding: 20px;
+            background: rgba(0, 255, 65, 0.05);
+            transition: 0.3s;
+            position: relative;
+        }
 
-        /* Progress Bars */
-        .progress-box { margin: 20px 0; }
-        .bar { height: 8px; background: #222; border-radius: 4px; margin-top: 5px; }
-        .fill { height: 100%; background: var(--accent); border-radius: 4px; box-shadow: 0 0 10px var(--accent); }
+        .node:hover { box-shadow: 0 0 20px var(--neon); background: rgba(0, 255, 65, 0.1); }
+
+        .node h2 { color: #fff; }
+        .status { font-size: 0.8rem; color: #aaa; margin-bottom: 10px; }
 
         .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            border-radius: 50px;
-            transition: 0.3s;
+            display: block; margin-top: 20px;
+            border: 1px solid var(--neon); padding: 10px;
+            color: var(--neon); text-align: center; text-decoration: none;
+            font-weight: bold; cursor: pointer;
         }
+        .btn:hover { background: var(--neon); color: black; }
 
-        .btn:hover { background: var(--accent); color: #000; }
-
-        .terminal-text { font-family: 'JetBrains Mono', monospace; }
+        /* Animated Loading Bar */
+        .loader { width: 100%; height: 4px; background: #111; margin-top: 10px; }
+        .loader-fill { height: 100%; background: var(--neon); width: 0%; animation: load 2s forwards; }
+        @keyframes load { to { width: 100%; } }
     </style>
 </head>
 <body>
+    <div class="scanline"></div>
 
-    <div class="hero">
-        <h1 class="terminal-text">HASH_PROJECT // TUXER</h1>
-        <p>The Ultimate Linux Desktop Architecture Guide</p>
+    <div class="header">
+        <h1>// SYSTEM_INIT //</h1>
+        <p>HASH PROJECT :: TUXER [LINUX KERNEL MODS]</p>
     </div>
 
-    <div class="container">
-        <!-- Card 1 -->
-        <div class="card">
-            <h2 class="terminal-text">01. GNOME</h2>
-            <p>High performance, modern touch-friendly workflow.</p>
-            <div class="progress-box">
-                <small>Resource Usage</small>
-                <div class="bar"><div class="fill" style="width: 70%;"></div></div>
-            </div>
-            <a href="https://www.gnome.org" class="btn">INITIALIZE</a>
+    <div class="grid-container">
+        <div class="node">
+            <div class="status">ID: GNOME_BASE // ONLINE</div>
+            <h2>GNOME</h2>
+            <div class="loader"><div class="loader-fill"></div></div>
+            <a href="https://www.gnome.org" class="btn">EXECUTE NODE</a>
         </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-            <h2 class="terminal-text">02. KDE PLASMA</h2>
-            <p>Infinite customization, designed for power users.</p>
-            <div class="progress-box">
-                <small>Flexibility</small>
-                <div class="bar"><div class="fill" style="width: 100%;"></div></div>
-            </div>
-            <a href="https://kde.org" class="btn">INITIALIZE</a>
+        <div class="node">
+            <div class="status">ID: KDE_PLASMA // ONLINE</div>
+            <h2>KDE PLASMA</h2>
+            <div class="loader"><div class="loader-fill" style="animation-delay: 0.5s;"></div></div>
+            <a href="https://kde.org" class="btn">EXECUTE NODE</a>
         </div>
-
-        <!-- Card 3 -->
-        <div class="card">
-            <h2 class="terminal-text">03. XFCE</h2>
-            <p>Minimalist, ultra-stable, for legacy hardware.</p>
-            <div class="progress-box">
-                <small>Speed</small>
-                <div class="bar"><div class="fill" style="width: 90%;"></div></div>
-            </div>
-            <a href="https://xfce.org" class="btn">INITIALIZE</a>
+        <div class="node">
+            <div class="status">ID: XFCE_LIGHT // ONLINE</div>
+            <h2>XFCE</h2>
+            <div class="loader"><div class="loader-fill" style="animation-delay: 1s;"></div></div>
+            <a href="https://xfce.org" class="btn">EXECUTE NODE</a>
         </div>
     </div>
 
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                console.log("Initializing...");
-            });
-        });
+        // Matrix Rain effect placeholder or console logs
+        console.log("HASH_PROJECT [STARTED]");
+        console.log("TUXER KERNEL LINKED...");
     </script>
 </body>
 </html>
