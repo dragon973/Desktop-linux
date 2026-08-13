@@ -25,12 +25,45 @@
             background-size: 100% 4px; pointer-events: none; z-index: 10;
         }
 
-        .header { padding: 50px; border-bottom: 2px solid var(--neon); text-align: center; }
-        .header h1 { font-family: 'Orbitron'; font-size: 3rem; letter-spacing: 5px; text-shadow: 0 0 15px var(--neon); }
+        .header { padding: 40px; border-bottom: 2px solid var(--neon); text-align: center; }
+        .header h1 { font-family: 'Orbitron'; font-size: 2.5rem; letter-spacing: 5px; text-shadow: 0 0 15px var(--neon); margin: 0; }
+        
+        .beta-badge {
+            background: var(--neon);
+            color: #000;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Search Bar Section */
+        .search-container {
+            text-align: center;
+            margin: 30px 20px;
+        }
+
+        .search-input {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid var(--neon);
+            padding: 12px 20px;
+            color: var(--neon);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 500px;
+            outline: none;
+            text-transform: lowercase;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+        }
+
+        .search-input::placeholder { color: rgba(0, 255, 65, 0.4); }
 
         .grid-container {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; padding: 50px;
+            gap: 20px; padding: 0 50px 50px 50px;
         }
 
         .node {
@@ -43,7 +76,7 @@
 
         .node:hover { box-shadow: 0 0 20px var(--neon); background: rgba(0, 255, 65, 0.1); }
 
-        .node h2 { color: #fff; }
+        .node h2 { color: #fff; margin-top: 0; }
         .status { font-size: 0.8rem; color: #aaa; margin-bottom: 10px; }
 
         .btn {
@@ -58,6 +91,14 @@
         .loader { width: 100%; height: 4px; background: #111; margin-top: 10px; }
         .loader-fill { height: 100%; background: var(--neon); width: 0%; animation: load 2s forwards; }
         @keyframes load { to { width: 100%; } }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 255, 65, 0.2);
+            font-size: 0.8rem;
+            color: rgba(0, 255, 65, 0.6);
+        }
     </style>
 </head>
 <body>
@@ -66,33 +107,60 @@
     <div class="header">
         <h1>// SYSTEM_INIT //</h1>
         <p>HASH PROJECT :: TUXER [LINUX KERNEL MODS]</p>
+        <div class="beta-badge">BETA v1.0.4</div>
     </div>
 
-    <div class="grid-container">
-        <div class="node">
+    <!-- Interactive Search Bar -->
+    <div class="search-container">
+        <input type="text" id="terminalSearch" class="search-input" placeholder="search keywords: tuxer, hash, linux, desktop..." onkeyup="filterNodes()">
+    </div>
+
+    <div class="grid-container" id="nodeGrid">
+        <div class="node" data-keywords="linux desktop gnome hash tuxer">
             <div class="status">ID: GNOME_BASE // ONLINE</div>
             <h2>GNOME</h2>
+            <p style="color:#888; font-size: 0.9rem;">Modern, fluid workflow designed for maximum efficiency.</p>
             <div class="loader"><div class="loader-fill"></div></div>
-            <a href="https://www.gnome.org" class="btn">EXECUTE NODE</a>
+            <a href="https://www.gnome.org" target="_blank" class="btn">EXECUTE NODE</a>
         </div>
-        <div class="node">
+        
+        <div class="node" data-keywords="linux desktop kde plasma hash tuxer">
             <div class="status">ID: KDE_PLASMA // ONLINE</div>
             <h2>KDE PLASMA</h2>
+            <p style="color:#888; font-size: 0.9rem;">Infinite customization for deep system control.</p>
             <div class="loader"><div class="loader-fill" style="animation-delay: 0.5s;"></div></div>
-            <a href="https://kde.org" class="btn">EXECUTE NODE</a>
+            <a href="https://kde.org" target="_blank" class="btn">EXECUTE NODE</a>
         </div>
-        <div class="node">
+        
+        <div class="node" data-keywords="linux desktop xfce hash tuxer">
             <div class="status">ID: XFCE_LIGHT // ONLINE</div>
             <h2>XFCE</h2>
+            <p style="color:#888; font-size: 0.9rem;">Ultra-lightweight performance for legacy hardware.</p>
             <div class="loader"><div class="loader-fill" style="animation-delay: 1s;"></div></div>
-            <a href="https://xfce.org" class="btn">EXECUTE NODE</a>
+            <a href="https://xfce.org" target="_blank" class="btn">EXECUTE NODE</a>
         </div>
     </div>
 
+    <footer>
+        DEVELOPED BY ABDUL // HASH_PROJECT KERNEL LABS
+    </footer>
+
     <script>
-        // Matrix Rain effect placeholder or console logs
-        console.log("HASH_PROJECT [STARTED]");
-        console.log("TUXER KERNEL LINKED...");
+        // Real-time filtering for tuxer, hash, linux, desktop keywords
+        function filterNodes() {
+            let query = document.getElementById('terminalSearch').value.toLowerCase();
+            let nodes = document.getElementsByClassName('node');
+
+            for (let i = 0; i < nodes.length; i++) {
+                let keywords = nodes[i].getAttribute('data-keywords');
+                if (keywords.includes(query) || query === "") {
+                    nodes.style.display = "block";
+                } else {
+                    nodes.style.display = "none";
+                }
+            }
+        }
+        console.log("HASH_PROJECT [STARTED BY ABDUL]");
     </script>
 </body>
 </html>
