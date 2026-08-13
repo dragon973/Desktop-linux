@@ -1,0 +1,210 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Desktop Environments Guide</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #0066cc;
+            --accent-hover: #004fb3;
+            --muted-color: #666666;
+            --border-color: #e0e0e0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: var(--text-color);
+        }
+        header p {
+            color: var(--muted-color);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.4rem;
+        }
+        .card p {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        .features li {
+            font-size: 0.85rem;
+            background: #f8f9fa;
+            margin-bottom: 5px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            color: #444;
+            border: 1px solid #eee;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: var(--muted-color);
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Linux Desktop Environments</h1>
+        <p>A comprehensive guide to popular Linux desktop environments and their official websites</p>
+    </header>
+
+    <div class="container">
+        <!-- GNOME -->
+        <div class="card">
+            <div>
+                <h2>GNOME</h2>
+                <p>The most popular and modern desktop environment. It features a sleek interface reminiscent of mobile operating systems and macOS.</p>
+                <ul class="features">
+                    <li>✨ Smooth design with touchpad gesture support</li>
+                    <li>🚀 Optimized for modern and high-resolution displays</li>
+                    <li>⚙️ Highly extensible via the GNOME Extensions system</li>
+                </ul>
+            </div>
+            <a href="https://www.gnome.org" target="_blank" class="btn">Official Website</a>
+        </div>
+
+        <!-- KDE Plasma -->
+        <div class="card">
+            <div>
+                <h2>KDE Plasma</h2>
+                <p>Unmatched in customization. It gives you complete control over every pixel on the screen and is a favorite for users who prefer a Windows-like layout.</p>
+                <ul class="features">
+                    <li>🎨 Endless and deep customization options</li>
+                    <li>⚡ Fast and efficient despite its rich feature set</li>
+                    <li>🔧 Packed with powerful built-in developer tools</li>
+                </ul>
+            </div>
+            <a href="https://kde.org/plasma-desktop/" target="_blank" class="btn">Official Website</a>
+        </div>
+
+        <!-- XFCE -->
+        <div class="card">
+            <div>
+                <h2>XFCE</h2>
+                <p>A lightning-fast and extremely lightweight desktop environment designed for older hardware and performance-focused users.</p>
+                <ul class="features">
+                    <li>🪶 Very low RAM and CPU resource usage</li>
+                    <li>🛠️ Traditional, stable, and reliable over long periods</li>
+                    <li>🔋 Great for older laptops to preserve battery life</li>
+                </ul>
+            </div>
+            <a href="https://xfce.org" target="_blank" class="btn">Official Website</a>
+        </div>
+
+        <!-- Cinnamon -->
+        <div class="card">
+            <div>
+                <h2>Cinnamon</h2>
+                <p>The flagship desktop of Linux Mint. It is designed to feel instantly familiar to traditional Windows users while offering robust features.</p>
+                <ul class="features">
+                    <li>🪟 Familiar layout (traditional start menu and taskbar)</li>
+                    <li>🧩 Easy support for themes and desklets</li>
+                    <li>⚖️ Great balance between modern looks and usability</li>
+                </ul>
+            </div>
+            <a href="https://projects.linuxmint.com/?project=cinnamon" target="_blank" class="btn">Official Website</a>
+        </div>
+
+        <!-- MATE -->
+        <div class="card">
+            <div>
+                <h2>MATE</h2>
+                <p>The continuation of GNOME 2. If you love the classic, lightweight look of traditional Linux without modern interface clutter, this is for you.</p>
+                <ul class="features">
+                    <li>🕰️ Classic and traditional desktop paradigm</li>
+                    <li>💻 Lightweight and stable on modest hardware</li>
+                    <li>💡 Simple, straightforward, and distraction-free</li>
+                </ul>
+            </div>
+            <a href="https://mate-desktop.org" target="_blank" class="btn">Official Website</a>
+        </div>
+
+        <!-- LXQt -->
+        <div class="card">
+            <div>
+                <h2>LXQt</h2>
+                <p>The merger of LXDE and Qt technologies, creating one of the lightest desktop environments available, built for minimal resource consumption.</p>
+                <ul class="features">
+                    <li>🪶 Ultra-lightweight and fast execution</li>
+                    <li>🔋 Perfect for reviving extremely old computers</li>
+                    <li>🛠️ Powered by modern Qt libraries</li>
+                </ul>
+            </div>
+            <a href="https://lxqt-project.org" target="_blank" class="btn">Official Website</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built by Abdul - Linux & Systems Enthusiast 🐧</p>
+    </footer>
+
+</body>
+</html>
